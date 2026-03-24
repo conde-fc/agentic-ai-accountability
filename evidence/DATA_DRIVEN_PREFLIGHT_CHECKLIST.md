@@ -1,15 +1,16 @@
 # DATA-DRIVEN PRE-FLIGHT CHECKLIST
 # ==================================
-# Every rule in this document was derived from actual errors
-# found in 1,653 reviewable cases across Claude Code, Codex,
-# Cowork, and web chat sessions.
+# Every rule in this document was derived from observable events
+# found in the author's research corpus: 1,653 reviewable cases
+# across Claude Code, Codex, Cowork, and web chat sessions.
 #
 # The number in brackets is how many times this specific
-# failure occurred in the data. This is not theory.
-# This is what happened.
+# pattern was observed in that corpus. Counts reflect the
+# author's dataset and are not independently regenerable
+# from this public repository alone (see REPRODUCIBILITY_MANIFEST.md).
 #
-# MANDATORY: Read the relevant section BEFORE writing code
-# that involves that operation.
+# The prevention rules themselves are independently applicable:
+# anyone can check their own code against these patterns.
 
 ---
 

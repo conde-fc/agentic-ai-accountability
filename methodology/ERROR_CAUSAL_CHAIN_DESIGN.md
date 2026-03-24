@@ -145,7 +145,7 @@ PREVENTION RULE (one sentence):
 master_errors.csv (5,899 errors)
         │
         ▼
-error_forensic_prep.py (filter noise)
+error_forensic_prep.py (filter noise)              [not yet in public repo]
         │
         ▼
 ~125 case files (filtered, deduplicated)
