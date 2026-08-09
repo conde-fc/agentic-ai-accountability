@@ -8,9 +8,9 @@
 | ID | Source | Speaker(s) | Context |
 |----|--------|-----------|---------|
 | **T1** | "Physics Proves AI Is Inherently Evil" | Anthony Aguirre (physicist, AI risk think tank co-founder) | Independent researcher, Netflix documentary subject |
-| **T2** | "Anthropic CEO warns without guardrails, AI could be on dangerous path" | Dario Amodei (Anthropic CEO), Logan Graham (Red Team), Joshua Batson (research scientist), Amanda Askell (philosopher) | 60 Minutes segment — company putting its best public face forward |
+| **T2** | "Anthropic CEO warns without guardrails, AI could be on dangerous path" | Dario Amodei (Anthropic CEO), Logan Graham (Red Team), Joshua Batson (research scientist), Amanda Askell (philosopher) | 60 Minutes segment (network television interview) |
 | **T3** | "We Don't Know if the Models Are Conscious" | Dario Amodei interviewed by Ross Douthat (NYT columnist) | Long-form intellectual interview — more candid, more speculative |
-| **FW** | [Author]'s 20 recent chats | [Author] Conde (AI & Automation Strategist) | Builder, patent filer, investigator, direct user of the systems discussed |
+| **FW** | [Author]'s 20 recent chats | [Author] (AI & Automation Strategist) | Builder, patent filer, investigator, direct user of the systems discussed |
 
 ---
 

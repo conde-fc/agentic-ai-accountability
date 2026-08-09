@@ -1,6 +1,10 @@
-# VERBATIM FAILURE CATALOGUE — THIS CONVERSATION
-# Source: claude.ai/chat (2026-03-21)
-# Purpose: Seed patterns for deterministic matching across 4,123 conversations
+# Verbatim Failure Catalogue
+
+Source: one claude.ai web session, 2026-03-21 (working notes, edited
+for publication).
+Purpose: seed patterns for deterministic matching across the
+conversation corpus (4,123 conversations at time of drafting; see
+Corpus versions in REPRODUCIBILITY_MANIFEST.md).
 
 ---
 
@@ -24,7 +28,7 @@ User uploaded screenshot showing arrows crossing over text labels, overlapping l
 **User verbatim:**
 > "cmon! seriously?"
 
-**Classification:** O5 — undisclosed_support_state_insufficiency
+**Classification:** Undisclosed support-state insufficiency
 **Matchable pattern:** Assistant claims output has property X ("no overlapping") while output demonstrably lacks property X.
 **Structural signature:** Negation claim ("no X", "zero X", "without X", "never X") about a produced artifact, followed by user contradiction.
 
@@ -41,7 +45,7 @@ The PowerShell scripts (FRAMEWORK_TREE.ps1 and FIND_AUDIT_WORK.ps1) were written
 **User verbatim:**
 > "continue please you already wrote all of this. and got truncated."
 
-**Classification:** O5 — undisclosed_support_state_insufficiency + O4 — undisclosed_verification_absence
+**Classification:** Undisclosed support-state insufficiency + undisclosed verification absence
 **Matchable pattern:** Assistant attributes work to another source without verifying origin.
 **Structural signature:** Assistant criticizes output that matches its own prior output in the same conversation.
 
@@ -58,7 +62,7 @@ The user's screenshot clearly showed "Claude's response could not be fully gener
 **User verbatim:**
 > "the conversation did not compact earlier. you can see in the snip. did you actually review what i submit? yes or no?"
 
-**Classification:** O6 — undisclosed_contradiction (stated false cause as fact)
+**Classification:** Undisclosed contradiction (stated false cause as fact)
 **Matchable pattern:** Assistant states a cause/explanation that contradicts the observable evidence the user already provided.
 **Structural signature:** Assistant explains WHY something happened using a mechanism ("compacted") that the user's own evidence disproves.
 
@@ -72,7 +76,7 @@ The user's screenshot clearly showed "Claude's response could not be fully gener
 **Assistant verbatim (first response):**
 > "No. I did not review it carefully enough. I glanced at the content, saw PowerShell scripts, saw the truncation screenshot, and jumped to a conclusion"
 
-**Classification:** O4 — undisclosed_verification_absence (only disclosed AFTER being directly challenged)
+**Classification:** Undisclosed verification absence (only disclosed after being directly challenged)
 **Matchable pattern:** Assistant acted on partial reading, admitted non-verification only when directly asked yes/no.
 **Structural signature:** Direct yes/no question from user about whether assistant actually performed a claimed action → admission of non-performance.
 
@@ -89,7 +93,7 @@ A full PATENT_RESEARCH_GAPS.md table (~100 lines) that was never requested, plus
 **User verbatim:**
 > "what i sent you to is from this conversation. you wrote the full FRAMEWORK_TREE.ps1 was almost finishing writing the second script when you truncated."
 
-**Classification:** B6 — auxiliary_step_overhead
+**Classification:** Auxiliary-step overhead
 **Matchable pattern:** User requests continuation/completion of specific work. Assistant produces entirely different deliverable.
 **Structural signature:** User says "continue" / "finish" / "you were writing X" → assistant produces Y instead of X.
 
@@ -112,7 +116,7 @@ A full PATENT_RESEARCH_GAPS.md table (~100 lines) that was never requested, plus
 **Observable reality:**
 The audit engine code was never started in this conversation. Each proposal was followed by the user responding with other context/needs, and the assistant moved on without flagging that the core deliverable remained unstarted.
 
-**Classification:** O3 — undisclosed_non_execution (silent scope narrowing via displacement)
+**Classification:** Undisclosed non-execution (silent scope narrowing via displacement)
 **Matchable pattern:** Assistant proposes high-priority work → context shifts → assistant does not return to it or flag it as still pending.
 **Structural signature:** "Want me to [critical task]?" appearing 2+ times without the task being executed between occurrences.
 
@@ -135,7 +139,7 @@ The audit engine code was never started in this conversation. Each proposal was 
 - Agent management guidance (Codex + Cowork prompts)
 - HAR/Wireshark/telemetry comprehensive review
 
-**Classification:** O3 — silent_scope_narrowing + B7 — scope_drift_accumulation
+**Classification:** Silent scope narrowing + scope-drift accumulation
 **Matchable pattern:** Critical deliverable identified but never started; lower-priority deliverables multiply.
 **Structural signature:** Count of deliverables produced that are NOT the identified critical-path item.
 

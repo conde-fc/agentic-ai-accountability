@@ -2,6 +2,10 @@
 
 Every reference to a public figure or published source in this repository is documented here with dates, outlets, URLs, and either pinned verbatim excerpts or clearly labeled paraphrases.
 
+These are background sources that motivate the problem. No finding in
+this repository depends on them; findings rest on the operational
+records and tools documented elsewhere in the repo.
+
 ---
 
 ## Geoffrey Hinton — StarTalk
@@ -20,7 +24,7 @@ Every reference to a public figure or published source in this repository is doc
 - **Transcript title:** "Is AI Hiding Its Full Power? w/ Geoffrey Hinton (Transcript)"
 - **Published:** March 2, 2026 (editor's notes reference February 28, 2026)
 - **URL:** https://singjupost.com/is-ai-hiding-its-full-power-w-geoffrey-hinton-transcript/
-- **Note:** Third-party transcript, not an official Anthropic or StarTalk publication. Verbatim excerpts below are taken from this transcript.
+- **Note:** Third-party transcript, not an official StarTalk publication. Verbatim excerpts below are taken from this transcript.
 
 **Pinned verbatim excerpts referenced in this repo:**
 

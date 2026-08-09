@@ -49,10 +49,10 @@ This document states exactly what is included in this public repository, what is
 |---|---|---|---|
 | Total observable events | 5,899 | Partially | Raw session files (not included) + `universal_error_scanner.py` (included) |
 | Reviewable events | 1,653 | No | `root_causes_by_type.csv` (not shipped) |
-| Preventable rate | 72%+ | No | Classification of 1,653 events |
+| Preventable rate | 67.2% (1,110/1,653 mapped events) | No | Classification of 1,653 events |
 | Token waste % | 10.9-13% | No | Token usage fields in JSONL session files |
 | Infrastructure overhead | ~30% | Partially | One observed context breakdown (in `evidence/CONTEXT_WINDOW_ANALYSIS.md`) |
-| Behavioral waste | ~15-20% | Partially | One session's block-by-block analysis (in `methodology/REVERSE_CAUSAL_CHAIN_ANALYSIS.md`) |
+| Behavioral waste | ~15% | Partially | One session's block-by-block analysis (in `methodology/REVERSE_CAUSAL_CHAIN_ANALYSIS.md`) |
 | Prevention rules | Fully stated | Yes — rules are in the checklist | Occurrence counts depend on author's dataset |
 | Structural signatures | Fully stated | Yes — patterns are in the catalogue | Anyone can search for them in their own data |
 | Root cause summary | Shipped | Partially — `evidence/root_cause_summary.md` is included | Generated from omitted upstream CSV |
@@ -85,10 +85,26 @@ All steps are reproducible from this repo. Steps 1-3 require the user's own sess
 
 Steps 3 and 4 form a true chain: Step 4 reads only the output of Step 3 (`reviewable_errors.csv`). Filtering is defined once in Step 3 and not duplicated.
 
+## Corpus versions
+
+Different documents in this project were drafted against different
+snapshots of a growing corpus. The counts differ because the corpus
+grew, not because any count is wrong. Canonical record:
+
+| Snapshot | Count | Unit | Used in |
+|---|---|---|---|
+| Repo v1.0 scan | 6,656 / 5,899 / 1,653 | session files / observable events (extraction rows) / mapped events | This repository |
+| Catalogue draft (2026-03-21) | 4,123 | web-chat conversations | `methodology/VERBATIM_FAILURE_CATALOGUE.md` |
+| Transcript mapping draft | 5,248 | conversations, 6 platforms | `findings/TRANSCRIPT_ATOMIC_MAPPING.md` |
+
+External documents by the same author cite additional snapshots of
+the same underlying collection at other dates. Counts are not
+interchangeable across snapshots.
+
 ## Known limitations
 
 - Token waste calculations depend on `usage` fields in JSONL files. Web chat exports do not include token data. Platform-specific JSONL formats differ in token count location and structure.
-- The behavioral waste estimate (15-20%) is derived from one conversation's block-by-block analysis. It is an estimate, not a corpus-wide measurement.
+- The behavioral waste estimate (~15%) is derived from one conversation's block-by-block analysis. It is an estimate, not a corpus-wide measurement.
 - Context overhead (~30%) is derived from one observed context breakdown. It varies by conversation length, tools loaded, and MCP connections.
-- The 72%+ preventable rate applies to events that passed noise filters. The filters were developed iteratively; earlier versions produced different counts.
+- The 67.2% preventable rate applies to events that passed noise filters. The filters were developed iteratively; earlier versions produced different counts.
 - The `TRANSCRIPT_ATOMIC_MAPPING.md` is interpretive synthesis, not deterministic extraction. It is clearly labeled as such.

@@ -62,6 +62,12 @@ of turns, this compounds significantly.
 
 ### Scaled estimate
 
+Status: Extrapolated. The infrastructure-overhead share derives from
+one observed context breakdown, and the behavioral-waste share from
+one session's block-by-block analysis (see REPRODUCIBILITY_MANIFEST
+known limitations). This table extends beyond direct measurement and
+is not a corpus-wide finding.
+
 | Category | % of total tokens | Explanation |
 |---|---|---|
 | Value to user | ~50% | Messages, outputs that fulfill requests |
@@ -95,38 +101,46 @@ conversation: 43% of thinking blocks had >20% waste, and
 
 ## Error Waste by Type
 
-| Error Type | Cases | Tokens Consumed | Avg Tokens/Error |
+| Error Type | Cases | Tokens Consumed (M) | Avg Tokens/Error |
 |---|---|---|---|
-| exception_line | 135 | 133,327M | 988K |
-| file_not_found | 199 | 127,386M | 640K |
-| traceback | 91 | 88,562M | 973K |
-| critical_marker | 111 | 39,441M | 355K |
-| syntax_error_detail | 41 | 38,047M | 928K |
-| errno | 34 | 18,610M | 547K |
-| ps_error | 30 | 12,815M | 427K |
-| npm_node_error | 21 | 11,673M | 556K |
-| unicode_escape | 8 | 4,144M | 518K |
-| win_error | 4 | 3,550M | 887K |
+| exception_line | 135 | 133.3M | 988K |
+| file_not_found | 199 | 127.4M | 640K |
+| traceback | 91 | 88.6M | 973K |
+| critical_marker | 111 | 39.4M | 355K |
+| syntax_error_detail | 41 | 38.0M | 928K |
+| errno | 34 | 18.6M | 547K |
+| ps_error | 30 | 12.8M | 427K |
+| npm_node_error | 21 | 11.7M | 556K |
+| unicode_escape | 8 | 4.1M | 518K |
+| win_error | 4 | 3.6M | 887K |
+
+Column sum: ~477.5M, consistent with the 478M combined error-cycle
+total above. (v1.2 correction: this column was previously published
+with values overstated by a factor of 1,000 due to a unit error.)
 
 ---
 
 ## Prevention Impact
 
-From the DATA_DRIVEN_PREFLIGHT_CHECKLIST, 72%+ of the 1,653
-reviewable errors are preventable with checks that take 1-2
-lines of code:
+From the DATA_DRIVEN_PREFLIGHT_CHECKLIST, 1,110 of the 1,653
+mapped events (67.2%) were classified preventable-with-available-
+checks; the checks are typically 1-2 lines of code:
 
-| Prevention Check | Errors Prevented | Tokens Saved (est.) |
-|---|---|---|
-| `Path.exists()` before access | 450+ | ~288M |
-| `try/except EOFError` on `input()` | 209 | ~134M |
-| `ast.parse()` before code delivery | 98 | ~63M |
-| `r"..."` for Windows paths | 54 | ~35M |
-| `importlib` check before import | 100+ | ~64M |
-| `hasattr()`/`.get()` before access | 78 | ~50M |
-| **Total preventable** | **~1,000** | **~634M** |
+| Prevention Check | Errors Prevented |
+|---|---|
+| `Path.exists()` before access | 450+ |
+| `try/except EOFError` on `input()` | 209 |
+| `ast.parse()` before code delivery | 98 |
+| `r"..."` for Windows paths | 54 |
+| `importlib` check before import | 100+ |
+| `hasattr()`/`.get()` before access | 78 |
+| **Total mapped to a check** | **~1,000** |
 
-634M tokens that could have been saved with trivial checks.
+Per-check token-savings estimates were removed in v1.2: as
+previously published they summed to ~634M, exceeding the measured
+478M total error-cycle waste and, per check, the corrected per-type
+totals above. They will be re-derived from the dataset with a stated
+formula before being republished.
 
 ---
 
@@ -136,12 +150,12 @@ lines of code:
    platform) consumed by preventable error cycles. Measured
    from token usage fields in the author's JSONL session files.
 
-2. **The ceiling is estimated.** Including infrastructure
+2. **The ceiling is extrapolated, not measured.** Including infrastructure
    overhead and behavioral waste, approximately 50% of all
    tokens consumed deliver no value to the user.
 
 3. **Prevention is cheap.** The checks that would prevent
-   72% of errors are 1-2 lines of code each. The
+   67.2% of mapped events are 1-2 lines of code each. The
    DATA_DRIVEN_PREFLIGHT_CHECKLIST documents every one.
 
 4. **The system doesn't self-improve.** The same errors recur

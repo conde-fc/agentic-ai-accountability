@@ -75,7 +75,7 @@ High-risk AI systems must be designed to allow effective human oversight during 
 |---|---|---|
 | Understand capabilities and limitations | The VERBATIM_FAILURE_CATALOGUE documents 8 structural failure signatures that indicate specific capability limits | `methodology/VERBATIM_FAILURE_CATALOGUE.md` |
 | Detect anomalies and dysfunctions | The scanning pipeline detects tracebacks, exceptions, permission errors, file-not-found patterns, and custom error markers automatically | `tools/universal_error_scanner.py` |
-| Awareness of automation bias | The REVERSE_CAUSAL_CHAIN_ANALYSIS documents observed correction tiers: conceptual corrections persist, principle corrections don't survive one block, behavioral corrections have zero effect — direct evidence of automation bias dynamics | `methodology/REVERSE_CAUSAL_CHAIN_ANALYSIS.md` |
+| Awareness of automation bias | The REVERSE_CAUSAL_CHAIN_ANALYSIS documents observed correction tiers: conceptual corrections persist, principle corrections don't survive one block, behavioral corrections have zero effect — an observed single-session instance of automation-bias dynamics (see SOURCE_APPENDIX.md, Correction Tier Finding) | `methodology/REVERSE_CAUSAL_CHAIN_ANALYSIS.md` |
 | Interpret outputs correctly | The accountability trace provides a structured method for tracing any AI output back through the decision chain to determine what was requested vs what was delivered | `methodology/ERROR_CAUSAL_CHAIN_DESIGN.md` |
 | Override or stop decisions | The prevention checklist provides specific checks that, if implemented, give operators decision points before AI actions execute | `evidence/DATA_DRIVEN_PREFLIGHT_CHECKLIST.md` |
 
@@ -94,7 +94,7 @@ High-risk AI systems must achieve an appropriate level of accuracy, robustness, 
 | Requirement | Framework capability | Where |
 |---|---|---|
 | Appropriate level of accuracy | The error rate calculation (events per session) provides a direct operational accuracy baseline | `ROI_MEASUREMENT_TEMPLATE.md` Part 2B |
-| Resilience to errors and faults | The preventable-rate measurement (72%+ in the author's dataset) quantifies how many operational failures were avoidable with basic checks | `evidence/root_cause_summary.md` |
+| Resilience to errors and faults | The preventable-rate measurement (67.2% of mapped events in the author's dataset) quantifies how many operational failures were avoidable with basic checks | `evidence/root_cause_summary.md` |
 | Performance monitoring | Token waste measurement quantifies resource consumption in error cycles, providing a cost-denominated performance metric | `findings/TOKEN_WASTE_ANALYSIS.md` |
 | Ongoing accuracy assessment | The measurement cycle enables longitudinal accuracy tracking across tool versions and configuration changes | `ROI_MEASUREMENT_TEMPLATE.md` Part 6 |
 

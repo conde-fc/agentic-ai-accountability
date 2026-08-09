@@ -62,3 +62,51 @@ public comment filed on FTC Docket No. FTC-2026-0859.
   definitions, and the Reproducibility Manifest. This revision changes
   presentation and labeling in the README only; no observation, rule,
   or measurement was altered.
+
+## v1.2 — Content corrections: units, derivable figures, labeling, headers (nine files)
+
+Applied by a deterministic exact-match script (42 single-occurrence
+replacements plus a counted notation swap); every change verified to
+match exactly once before any file was written. No observation, rule,
+or measurement methodology was altered; corrections address units,
+figure derivability, labeling, and presentation.
+
+### Corrected
+- findings/TOKEN_WASTE_ANALYSIS.md: "Error Waste by Type" token column
+  corrected for a 1,000x unit error (values now sum to ~477.5M,
+  consistent with the 478M combined total). Underivable "72%+"
+  preventable figure replaced with the derivable 67.2% (1,110/1,653
+  mapped events). Per-check token-savings estimates and the ~634M
+  total removed pending re-derivation: as published they exceeded the
+  measured 478M total and per-type caps. "Scaled estimate" table and
+  the ceiling conclusion now explicitly labeled Extrapolated with
+  their single-observation bases stated.
+- REPRODUCIBILITY_MANIFEST.md: preventable-rate metric synced to
+  67.2% with denominator; behavioral-waste figure standardized to
+  ~15%; new "Corpus versions" section recording that different
+  documents were drafted against different snapshots of a growing
+  corpus (6,656 files / 5,899 events; 4,123 conversations at the
+  2026-03-21 catalogue draft; 5,248 conversations in the transcript
+  mapping) so differing counts are documented rather than apparent
+  inconsistencies.
+- EU_AI_ACT_ALIGNMENT.md: single-session correction-tier observation
+  no longer described as "direct evidence"; preventable figure synced.
+- SOURCE_APPENDIX.md: preamble added stating these are background
+  sources on which no finding depends; stray "Anthropic or" removed
+  from the transcript provenance note.
+- methodology/VERBATIM_FAILURE_CATALOGUE.md: undefined O/B
+  classification codes replaced with their descriptive names (the
+  codes belong to a taxonomy not defined in this repository and were
+  internally inconsistent); header comment block converted from
+  stacked H1 headings to a single title with plain-text metadata.
+- methodology/REVERSE_CAUSAL_CHAIN_ANALYSIS.md: retitled to match the
+  name used by the README and INVESTIGATION_TECHNIQUES ("House of
+  Horrors Walk" retained as a noted working name); header block fixed.
+- methodology/THINKING_BLOCK_COMBINED_ASSESSMENT.md and
+  methodology/THINKING_BLOCK_REVERSE_CHRONOLOGICAL.md: header blocks
+  converted from stacked H1s to a single title.
+- methodology files (three): emoji severity notation replaced with
+  text notation (FAIL / FAIL+ / PARTIAL / PASS), 264 symbols total.
+- findings/TRANSCRIPT_ATOMIC_MAPPING.md: incomplete redaction
+  completed ("[Author] Conde" to "[Author]"); one editorializing
+  source characterization neutralized.
